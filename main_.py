@@ -8,6 +8,7 @@ def main(page: ft.Page):
     
 
     greeting_text = ft.Text('Hello world')
+    fg = ft.Text('Hello world')
 
     greeting_history = []
     history_text = ft.Text('История приветсвий:', style='bodyMedium')
@@ -22,12 +23,16 @@ def main(page: ft.Page):
             
             if 6 <= hour < 12:
                 greeting_text.value = f'Доброе утро, {name}!'
+                greeting_text.color = "yellow"
             elif 12 <= hour < 18:
                 greeting_text.value = f'Добрый день, {name}!'
+                greeting_text.color = "orange"
             elif 18 <= hour < 24:
                 greeting_text.value = f'Добрый вечер, {name}!'
+                greeting_text.color = "red"
             else:
                 greeting_text.value = f'Доброй ночи, {name}!'
+                greeting_text.color = "blue"
 
             greet_button.text = 'Поздороваться снова'
             name_input.value = ''
